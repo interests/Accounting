@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+        <TextView
+            android:id="@+id/start_date"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/txt_Date"
+            android:layout_alignBottom="@+id/txt_Date"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:text="@string/title_date"/>
+
+        <TextView
+            android:id="@+id/txt_Date"
+            style="@android:style/Widget.DeviceDefault.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/start_date"
+            android:gravity="center_vertical"
+            android:layout_margin="4dp"
+            android:text="01.01.2016"
+            android:textSize="24sp" />
+
+
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_below="@id/start_date"
+            android:layout_alignBottom="@+id/txt_category"
+            android:gravity="center_vertical"
+            android:layout_alignTop="@+id/txt_category"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:textSize="20sp"
+            android:text="@string/category"/>
+
+        <TextView
+            android:id="@+id/txt_category"
+            android:layout_toRightOf="@id/category"
+            android:layout_below="@id/txt_Date"
+            style="@android:style/Widget.DeviceDefault.Light.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Еда"
+            android:layout_margin="4dp"
+            android:textSize="24sp" />
+
+
+
+        <TextView
+            android:id="@+id/txt_sum"
+            android:layout_below="@id/category"
+            android:layout_alignBottom="@+id/editText_sum"
+            android:layout_alignTop="@+id/editText_sum"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:text="@string/title_sum"/>
+
+        <ru.avisprof.accounting.supporting.NumberEditText
+            android:id="@+id/editText_sum"
+            android:layout_toRightOf="@+id/category_image"
+            android:layout_below="@id/txt_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_margin="4dp"
+            android:hint="@string/title_sum"></ru.avisprof.accounting.supporting.NumberEditText>
+
+        <ImageView
+            android:id="@+id/category_image"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/study"
+            android:layout_alignBottom="@+id/editText_sum"
+            android:layout_alignTop="@+id/editText_sum"
+            android:layout_toRightOf="@id/txt_sum" />
+
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_below="@id/txt_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:textSize="20sp"
+            android:text="@string/description_hint"/>
+
+        <EditText
+            android:id="@+id/editText_description"
+            android:layout_below="@id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description_hint"
+            android:textSize="20sp"
+            android:inputType="textMultiLine"></EditText>
+
+
+
+</RelativeLayout>

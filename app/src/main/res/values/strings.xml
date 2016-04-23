@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Учет расходов</string>
+    <string name="category">Категория</string>
+    <string name="tag_categories">Категории</string>
+    <string name="question_delete_category">Удалить категорию</string>
+    <string name="title_add_category">Добавить категорию</string>
+    <string name="choose_category">Укажите категорию</string>
+    <string name="error_category">Не указано название категории</string>
+
+    <string name="title_add_record">Добавить запись</string>
+    <string name="title_select_date">Выбрать дату</string>
+    <string name="delete_record">Удалить запись</string>
+    <string name="question_delete_record">Удалить запись?</string>
+
+    <string name="choose_description">Укажите описание</string>
+    <string name="description_hint">Описание</string>
+
+    <string name="title_date">Дата</string>
+    <string name="title_sum">Cумма</string>
+    <string name="choose_sum">Укажите сумму расхода</string>
+
+    <string name="question_save">Сохранить изменения?</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+
+
+    <string-array name="icon_ids">
+        <item>@drawable/beer</item>
+        <item>@drawable/book</item>
+        <item>@drawable/buy</item>
+        <item>@drawable/car</item>
+        <item>@drawable/clothes</item>
+        <item>@drawable/computer</item>
+        <item>@drawable/devices</item>
+        <item>@drawable/drinks</item>
+        <item>@drawable/fruit</item>
+        <item>@drawable/fuel</item>
+        <item>@drawable/fun</item>
+        <item>@drawable/furniture</item>
+        <item>@drawable/game</item>
+        <item>@drawable/garden</item>
+        <item>@drawable/gift</item>
+        <item>@drawable/glasses</item>
+        <item>@drawable/house</item>
+        <item>@drawable/inet</item>
+        <item>@drawable/lens</item>
+        <item>@drawable/lunch</item>
+        <item>@drawable/meat</item>
+        <item>@drawable/medication</item>
+        <item>@drawable/mobile</item>
+        <item>@drawable/other</item>
+        <item>@drawable/relax</item>
+        <item>@drawable/repair</item>
+        <item>@drawable/sink</item>
+        <item>@drawable/study</item>
+        <item>@drawable/tablets</item>
+        <item>@drawable/technics</item>
+        <item>@drawable/theatre</item>
+        <item>@drawable/toys</item>
+        <item>@drawable/transport</item>
+        <item>@drawable/utilities</item>
+    </string-array>
+</resources>

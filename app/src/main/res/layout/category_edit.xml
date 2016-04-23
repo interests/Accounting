@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView_icon"
+        android:layout_alignParentLeft="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="6dp"
+        android:gravity="center"
+        android:padding="1dp"
+        android:background="#BDBDBD"
+        android:src="@drawable/study" >
+    </ImageView>
+    
+    <EditText
+        android:id="@+id/edtCategoryName"
+        android:layout_toRightOf="@id/imageView_icon"
+        android:layout_alignTop="@id/imageView_icon"
+        android:layout_alignBottom="@id/imageView_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/choose_category" >
+    </EditText>
+
+
+
+
+</RelativeLayout>

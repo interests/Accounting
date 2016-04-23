@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ru.avisprof.accounting.MainActivity">
+    <item
+        android:id="@+id/action_choose_date"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/title_select_date">
+    </item>
+
+    <item
+        android:id="@+id/action_add_record"
+        android:icon="@android:drawable/ic_menu_add"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/title_add_record">
+    </item>
+
+    <item
+        android:id="@+id/action_categories"
+        android:orderInCategory="300"
+        android:showAsAction="never|withText"
+        android:title="@string/tag_categories">
+    </item>
+</menu>
