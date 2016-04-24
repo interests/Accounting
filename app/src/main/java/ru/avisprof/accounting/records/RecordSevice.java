@@ -9,6 +9,7 @@ public class RecordSevice {
 	private int mRecordID;
 	private long mDate;
 	private boolean mHeader;
+	private double mSum;
 	
 	public int getRecordID() {
 		return mRecordID;
@@ -28,8 +29,13 @@ public class RecordSevice {
 	public void setHeader(boolean header) {
 		this.mHeader = header;
 	}
-	
-	
-	
 
+
+	public double getSum() {
+		return mSum;
+	}
+
+	public void setSum(double sum) {
+		this.mSum = sum;
+	}
 }

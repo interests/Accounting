@@ -75,7 +75,7 @@ public class RecordsListViewAdapter extends BaseAdapter {
                 view = convertView;
             }
 
-            bindHeader(view, mContext, recordService.getDate());
+            bindHeader(view, mContext, recordService.getDate(), recordService.getSum());
 
             return view;
 
@@ -111,15 +111,17 @@ public class RecordsListViewAdapter extends BaseAdapter {
 
         ViewHolderSeparator holder = new ViewHolderSeparator();
         holder.textView_dateSeparator = (TextView) view.findViewById(R.id.textView_dateSeparator);
+        holder.textView_sumSeparator = (TextView) view.findViewById(R.id.textView_sumSeparator);
         view.setTag(holder);
 
         return view;
     }
 
-    public void bindHeader(View view, Context context, long date) {
+    public void bindHeader(View view, Context context, long date, double sum) {
         ViewHolderSeparator holder = (ViewHolderSeparator)view.getTag();
         if (holder!=null) {
             holder.textView_dateSeparator.setText(SharedMethods.getDateHeaderString(new Date(date)));
+            holder.textView_sumSeparator.setText(SharedMethods.getSumString(sum));
         }
 
     }
@@ -176,6 +178,7 @@ public class RecordsListViewAdapter extends BaseAdapter {
 
     static class ViewHolderSeparator {
         TextView textView_dateSeparator;
+        TextView textView_sumSeparator;
     }
 }
 

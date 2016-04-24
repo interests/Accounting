@@ -262,7 +262,9 @@ public class DbManager {
     //а затем уже добавляем непосредственно запись
     public ArrayList<RecordSevice> getRecordsIDs() {
 
-        String text_query = "SELECT "+DbHelper.KEY_RECORDS_ID +", "+DbHelper.KEY_RECORDS_DATE
+        String text_query = "SELECT "+DbHelper.KEY_RECORDS_ID
+                +", "+DbHelper.KEY_RECORDS_DATE
+                +", "+DbHelper.KEY_RECORDS_SUM
                 +" FROM "+DbHelper.TABLE_RECORDS
                 +" ORDER BY "+DbHelper.KEY_RECORDS_DATE+" DESC";
 
@@ -279,17 +281,32 @@ public class DbManager {
 
         cursor.moveToFirst();
 
+        double total = 0; //для подсчета итогов по расходу за день
+        int group_index = 0; //индекс группы, для которой потом установим сумму расхода за день
+
         do {
             int recordID = cursor.getInt(0);
             long startDate = cursor.getLong(1);
+            double sum = cursor.getDouble(2);
 
             Date currentDate = new Date(startDate);
             if (!SharedMethods.isSameDate(lastDate, currentDate)) {
+
+                if (total != 0) {
+                    //установим итог по расходу за день
+                    RecordSevice oldRecordHeader = list.get(group_index);
+                    oldRecordHeader.setSum(total);
+                    list.set(group_index, oldRecordHeader);
+                }
+                total = 0; //обнулим итоги
+
                 // добавляем разделитель
                 RecordSevice recordHeader = new RecordSevice();
                 recordHeader.setHeader(true);
                 recordHeader.setDate(SharedMethods.getStartOfDay(startDate));
                 list.add(recordHeader);
+
+                group_index = list.size()-1;
 
                 // и запоминаем текущую дату
                 lastDate = currentDate;
@@ -301,7 +318,16 @@ public class DbManager {
             recordService.setHeader(false);
             list.add(recordService);
 
+            total = total + sum;
+
         } while (cursor.moveToNext());
+
+        if (total != 0) {
+            //установим итог по расходу за день
+            RecordSevice oldRecordHeader = list.get(group_index);
+            oldRecordHeader.setSum(total);
+            list.set(group_index, oldRecordHeader);
+        }
 
 
         cursor.close();
