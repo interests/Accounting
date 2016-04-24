@@ -1,6 +1,8 @@
 package ru.avisprof.accounting.supporting;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -18,7 +20,7 @@ public class SharedMethods {
 
 	public static String getSumString(double sum) {
 		//return String.format("%.2f", sum);
-		return new DecimalFormat("##,##0.00").format(sum);
+		return new DecimalFormat("##,##0.00").format(sum).replace(",",".");
 	}
 
 	public static String getDateString(Date date) {

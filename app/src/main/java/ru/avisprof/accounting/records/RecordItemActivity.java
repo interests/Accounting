@@ -154,10 +154,11 @@ public class RecordItemActivity extends AppCompatActivity {
 			edt_description.setError(null);
 		}
 
-		if (mCategory == null) {
+		int imageId = mCategory.getImageId();
+		if (mCategory == null || imageId == -1) {
 			category_image.setImageBitmap(null);
 		} else {
-			ImageItem item = GridViewActivity.getImageItems(getApplicationContext()).get(mCategory.getImageId());
+			ImageItem item = GridViewActivity.getImageItems(getApplicationContext()).get(imageId);
 			category_image.setImageBitmap(item.getImage());
 		}
 		
@@ -194,7 +195,7 @@ public class RecordItemActivity extends AppCompatActivity {
 		mRecord.setDate(mDate);
 		mRecord.setCategory(mCategory);
 		mRecord.setDescription(edt_description.getText().toString());
-		mRecord.setSum(Double.valueOf(edt_sum.getText().toString()).doubleValue());
+		mRecord.setSum(Double.valueOf(edt_sum.getText().toString()));
 		DbManager.getInstance(getApplicationContext()).updateRecord(mRecord);
 	}
 

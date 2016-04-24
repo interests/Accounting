@@ -54,7 +54,7 @@ public class CategoryAdapter extends ArrayAdapter<Category>{
 			ImageItem item = imageList.get(imageId);
 			holder.categoryImage.setImageBitmap(item.getImage());			
 		} else {
-			//holder.categoryImage.setImageBitmap(null);
+			holder.categoryImage.setImageBitmap(null);
 		}
 		
 		return view;

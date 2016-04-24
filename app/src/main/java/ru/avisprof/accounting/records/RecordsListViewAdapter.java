@@ -19,7 +19,7 @@ import ru.avisprof.accounting.images.ImageItem;
 import ru.avisprof.accounting.sqlite.DbManager;
 import ru.avisprof.accounting.supporting.SharedMethods;
 
-/**
+/**Получение списка записей. Пока что использую ListView
  * Created by Leonid on 22.04.2016.
  */
 public class RecordsListViewAdapter extends BaseAdapter {
@@ -152,11 +152,12 @@ public class RecordsListViewAdapter extends BaseAdapter {
             Category category = record.getCategory();
             String category_text = category.getName();
 
-            if (category == null) {
+            int imageId = category.getImageId();
+            if (category == null || imageId == -1) {
                 holder.imageView_category.setImageBitmap(null);
             } else {
                 //category_text = category_text + (category_text.equals("") ? "" : ", ") + category.toString();
-                ImageItem item = mImageItems.get(category.getImageId());
+                ImageItem item = mImageItems.get(imageId);
                 holder.imageView_category.setImageBitmap(item.getImage());
             }
 
