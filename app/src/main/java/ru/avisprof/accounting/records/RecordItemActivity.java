@@ -68,7 +68,7 @@ public class RecordItemActivity extends AppCompatActivity {
 		mCategory = mRecord.getCategory();
 
 		edt_sum = (EditText) findViewById(R.id.editText_sum);
-		edt_sum.setText(SharedMethods.getSumString(mRecord.getSum()));
+		edt_sum.setText(Double.toString(mRecord.getSum()));
 
 		category_image = (ImageView) findViewById(R.id.category_image);
 
